@@ -2,7 +2,7 @@
 <ul>
    <li><p>These routes are protected using JWT authentication.</p>
        <p>/user-model  - get informations of all users in database</p>
-       <p>/user-mode/:id  - Get, Post, Patch, Delete methods</p>
+       <p>/user-mode/:id  - Get, Post, Patch, Delete methods to retrieve information related to id</p>
        
    <li> <p>/auth/signup - Post signup a new user</p> 
         <p>/auth/signin - Post sign a existing user</p>

@@ -1,4 +1,4 @@
-API Route: 
+<h1>API Route:</h1> 
    (i) These routes are protected using JWT authentication.
        /user-model  - get informations of all users in database
        /user-mode/:id  - Get, Post, Patch, Delete methods

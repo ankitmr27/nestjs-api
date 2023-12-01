@@ -1,10 +1,12 @@
 <h1>API Route:</h1> 
-   (i) These routes are protected using JWT authentication.
-       /user-model  - get informations of all users in database
-       /user-mode/:id  - Get, Post, Patch, Delete methods
+<ul>
+   <li><p>These routes are protected using JWT authentication.</p>
+       <p>/user-model  - get informations of all users in database</p>
+       <p>/user-mode/:id  - Get, Post, Patch, Delete methods</p>
        
-   (ii) /auth/signup - Post signup a new user 
-        /auth/signin - Post sign a existing user
+   <li> <p>/auth/signup - Post signup a new user</p> 
+        <p>/auth/signin - Post sign a existing user</p>
+ </ul>       
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>

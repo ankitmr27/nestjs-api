@@ -12,6 +12,8 @@ export class AuthService {
     private jwt: JwtService,
     private config: ConfigService,
   ) {}
+
+  //sign in function
   async signin(dto: CreateUserModelDto) {
     try {
       //find the user
@@ -36,6 +38,7 @@ export class AuthService {
     }
   }
 
+  // sign up function
   async signup(dto: CreateUserModelDto) {
     try {
       //generate hash password
@@ -60,6 +63,7 @@ export class AuthService {
     }
   }
 
+  // return JWT for authentication
   async signToken(userId: number, email: string): Promise<string> {
     try {
       const payload = {

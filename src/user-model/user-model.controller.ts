@@ -11,8 +11,9 @@ import {
 import { UserModelService } from './user-model.service';
 import { CreateUserModelDto } from './dto/create-user-model.dto';
 import { UpdateUserModelDto } from './dto/update-user-model.dto';
-import { AuthGuard } from '@nestjs/passport';
+import { JwtGuard } from 'src/auth/guard';
 
+@UseGuards(JwtGuard)
 @Controller('user-model')
 export class UserModelController {
   constructor(private readonly userModelService: UserModelService) {}
@@ -21,18 +22,17 @@ export class UserModelController {
   @Post()
   async create(@Body() createUserModelDto: CreateUserModelDto) {
     //console.log(createUserModelDto);
-    return this.userModelService.create(createUserModelDto);
+    return await this.userModelService.create(createUserModelDto);
   }
 
-  @UseGuards(AuthGuard('jwt'))
   @Get()
   async findAll() {
-    return this.userModelService.findAll();
+    return await this.userModelService.findAll();
   }
 
   @Get(':id')
   async findOne(@Param('id') id: string) {
-    return this.userModelService.findOne(+id);
+    return await this.userModelService.findOne(+id);
   }
 
   @Patch(':id')
@@ -40,11 +40,11 @@ export class UserModelController {
     @Param('id') id: string,
     @Body() updateUserModelDto: UpdateUserModelDto,
   ) {
-    return this.userModelService.update(+id, updateUserModelDto);
+    return await this.userModelService.update(+id, updateUserModelDto);
   }
 
   @Delete(':id')
   async remove(@Param('id') id: string) {
-    return this.userModelService.remove(+id);
+    return await this.userModelService.remove(+id);
   }
 }

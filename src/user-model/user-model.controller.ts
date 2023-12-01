@@ -6,10 +6,12 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { UserModelService } from './user-model.service';
 import { CreateUserModelDto } from './dto/create-user-model.dto';
 import { UpdateUserModelDto } from './dto/update-user-model.dto';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('user-model')
 export class UserModelController {
@@ -22,6 +24,7 @@ export class UserModelController {
     return this.userModelService.create(createUserModelDto);
   }
 
+  @UseGuards(AuthGuard('jwt'))
   @Get()
   async findAll() {
     return this.userModelService.findAll();
